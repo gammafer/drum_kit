@@ -70,6 +70,16 @@
     });
    })
  });
+window.addEventListener("keydown",function(e){
+  let soundKeydown= document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  let Key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  soundKeydown.cloneNode(true).play();
+  Key.classList.add('playing');
+  Key.addEventListener('transitionend',function(){
+    Key.classList.remove('playing');
+        
+    });
+})
 </script>
 
 
